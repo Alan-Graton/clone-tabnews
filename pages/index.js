@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h1>Vivian, cobra o chefinho sobre o seu desafio... bobona</h1>;
+  return <h1>Participando do melhor curso que eu já vi ^-^</h1>;
 }
