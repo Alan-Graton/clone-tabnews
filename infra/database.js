@@ -10,10 +10,16 @@ async function query(queryObject) {
   });
 
   await client.connect();
-  const result = await client.query(queryObject);
-  await client.end();
 
-  return result.rows;
+  try {
+    const result = await client.query(queryObject);
+
+    return result.rows;
+  } catch (error) {
+    console.error("[database] Query execution FAILED: ", error);
+  } finally {
+    await client.end();
+  }
 }
 
 export default {
